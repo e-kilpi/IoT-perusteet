@@ -1,0 +1,90 @@
+{
+  "version": 1,
+  "author": "Anonymous maker",
+  "editor": "wokwi",
+  "parts": [
+    {
+      "type": "wokwi-pi-pico",
+      "id": "pico",
+      "top": 0,
+      "left": 0,
+      "attrs": { "env": "micropython-20241129-v1.24.1" }
+    },
+    {
+      "type": "wokwi-buzzer",
+      "id": "bz1",
+      "top": -112.8,
+      "left": -113.4,
+      "attrs": { "volume": "0.1" }
+    },
+    {
+      "type": "wokwi-pushbutton",
+      "id": "btn1",
+      "top": 61,
+      "left": 134.6,
+      "rotate": 180,
+      "attrs": { "color": "blue", "xray": "1" }
+    },
+    {
+      "type": "wokwi-led",
+      "id": "led1",
+      "top": 299.2,
+      "left": -34.2,
+      "rotate": 180,
+      "attrs": { "color": "green" }
+    },
+    {
+      "type": "wokwi-led",
+      "id": "led2",
+      "top": 299.2,
+      "left": 4.2,
+      "rotate": 180,
+      "attrs": { "color": "yellow" }
+    },
+    {
+      "type": "wokwi-led",
+      "id": "led3",
+      "top": 299.2,
+      "left": 42.6,
+      "rotate": 180,
+      "attrs": { "color": "red" }
+    },
+    {
+      "type": "wokwi-resistor",
+      "id": "r2",
+      "top": 282.35,
+      "left": -105.6,
+      "attrs": { "value": "300" }
+    },
+    {
+      "type": "wokwi-resistor",
+      "id": "r1",
+      "top": 263.15,
+      "left": -105.6,
+      "attrs": { "value": "300" }
+    },
+    {
+      "type": "wokwi-resistor",
+      "id": "r3",
+      "top": 243.95,
+      "left": -105.6,
+      "attrs": { "value": "300" }
+    }
+  ],
+  "connections": [
+    [ "led1:A", "r2:2", "red", [ "v0" ] ],
+    [ "led2:A", "r1:2", "red", [ "v0" ] ],
+    [ "led3:A", "r3:2", "red", [ "v0" ] ],
+    [ "led3:C", "pico:GND.5", "black", [ "h66.8", "v-131.25" ] ],
+    [ "led2:C", "pico:GND.5", "black", [ "v-9.6", "h95.6", "v-115.2", "h-52.8" ] ],
+    [ "led1:C", "pico:GND.5", "black", [ "v-19.2", "h124.4", "v-96", "h-43.2" ] ],
+    [ "r3:1", "pico:GP15", "red", [ "v0" ] ],
+    [ "r1:1", "pico:GP14", "red", [ "h-9.6", "v-83.25" ] ],
+    [ "r2:1", "pico:GP13", "red", [ "h-19.2", "v-121.65" ] ],
+    [ "pico:GP12", "bz1:2", "red", [ "h0" ] ],
+    [ "pico:GP18", "btn1:1.r", "blue", [ "h0" ] ],
+    [ "bz1:1", "pico:GND.1", "black", [ "v0" ] ],
+    [ "pico:3V3", "btn1:2.r", "green", [ "h0" ] ]
+  ],
+  "dependencies": {}
+}
